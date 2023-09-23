@@ -62,19 +62,17 @@
     {
       "transform": [
         {
-          "lookup": "properties.NAME",
+          "lookup": "Country Name",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/w9_hw/data/Military_expenditure_2022_current_USD.csv"
             },
-            "key": "Country",
-            "fields": [
-              "2022"
-            ]
+            "key": "Country Name",
+            "fields": ["2022"]
           }
         },
         {
-          "calculate": "datum.2022 / 1000000",
+          "calculate": "datum['2022'] ? datum['2022'] / 1000000 : null",
           "as": "Military expenditure 2022 (current million USD)"
         }
       ],
@@ -88,18 +86,10 @@
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [
-              10000,
-              100000,
-              500000
-            ],
-            "range": [
-              "#fdbe85",
-              "#fd8d3c",
-              "#e6550d",
-              "#a63603"
-            ]
-          }
+            "domain": [10000, 100000, 500000],
+            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+          },
+          "title": "Military Expenditure (2022, current million USD)"
         },
         "tooltip": [
           {
@@ -110,7 +100,8 @@
           {
             "field": "Military expenditure 2022 (current million USD)",
             "type": "quantitative",
-            "format": ".2f"
+            "format": ".2f",
+            "title": "Military Expenditure (2022, current million USD)"
           }
         ]
       }
