@@ -9,5 +9,16 @@
 }
 
 #vg-tooltip-element {
-	min-width: 300px; /* Adust*/
+	min-width: 300px;
+}
+
+#vg-tooltip-element .key,
+#vg-tooltip-element .value {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#vg-tooltip-element {
+	font-size: 10px;
 }

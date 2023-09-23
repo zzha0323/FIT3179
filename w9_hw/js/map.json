@@ -80,6 +80,7 @@
         "color": {
           "field": "2022",
           "type": "quantitative",
+          "title": "Military expenditure in 2022",
           "scale": {
             "type": "threshold",
             "domain": [10000000, 100000000, 500000000],
@@ -95,7 +96,6 @@
           {
             "field": "2022",
             "type": "quantitative",
-            "title": "Military expenditure in 2022",
             "format": ".2f"
           }
         ]
