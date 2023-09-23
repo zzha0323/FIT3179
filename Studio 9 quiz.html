@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+  <div id="vis"></div>
+  <script>
+  // 100.datavizproject.com
+    var spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "title ": "Number of World Heritage Sites in 2004 and 2022",
+      "width": 200,
+      "height": 400,
+      "data": {
+        "values": [
+          { "Country": "Norway", "Year": 2004, "Sites": 5 },
+          { "Country": "Norway", "Year": 2022, "Sites": 8 },
+          { "Country": "Denmark", "Year": 2004, "Sites": 4 },
+          { "Country": "Denmark", "Year": 2022, "Sites": 10 },
+          { "Country": "Sweden", "Year": 2004, "Sites": 13 },
+          { "Country": "Sweden", "Year": 2022, "Sites": 15 }
+        ]
+      },
+      "mark": "bar",
+      "encoding": {
+        "column": { "field": "Country", "type": "nominal" },
+        "x": { "field": "Year", "type": "ordinal", "title": "Year", "axis": { "labelAngle": 0 } },
+        "y": { "field": "Sites", "type": "quantitative", "title": "Number of Sites" },
+        "color": { "field": "Year", "type": "ordinal", "scale": { "range": ["#1f77b4", "#ff7f0e"] } }
+      }
+    };
+    vegaEmbed("#vis", spec, { mode: "vega-lite" }).then(console.log).catch(console.warn);
+  </script>
+</body>
+
+</html>
