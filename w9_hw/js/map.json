@@ -82,11 +82,12 @@
           "type": "quantitative",
           "title": "Military expenditure in 2022",
           "scale": {
-            "type": "threshold",
-            "domain": [20000000000, 40000000000, 60000000000, 80000000000, 100000000000],
-            "range": ["#FCBBA1", "#FC9272", "#FB6A4A", "#EF3B2C", "#CB181D", "#67000D"]
+            "type": "linear",
+            "domain": [131072000, 327680000, 819200000, 2048000000, 5120000000, 128000000000, 320000000000, 800000000000],
+            "range": ["#FEE0D2", "#FCBBA1", "#FC9272", "#FB6A4A", "#EF3B2C", "#CB181D", "#67000D", "#330006"]
           }
-        },        
+        }
+        ,        
         "tooltip": [
           {
             "field": "properties.NAME",
