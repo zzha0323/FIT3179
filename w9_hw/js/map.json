@@ -96,6 +96,7 @@
           {
             "field": "2022",
             "type": "quantitative",
+            "title": "Military expenditure in 2022",
             "format": ".2f"
           }
         ]
