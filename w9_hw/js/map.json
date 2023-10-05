@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Military Expenditure 2022 (current USD)",
+  "title": "Military Expenditure in 2022",
   "width": 800,
   "height": 400,
   "data": {
@@ -98,7 +98,7 @@
           {
             "field": "2022",
             "type": "quantitative",
-            "title": "Military expenditure in 2022",
+            "title": "Military expenditure",
             "format": ".2f"
           }
         ]
