@@ -70,10 +70,6 @@
             "key": "Country Name",
             "fields": ["2022"]
           }
-        },
-        {
-          "calculate": "format(datum['2022'], '.2~s')",
-          "as": "formatted_expense"
         }
       ],
       "mark": {
@@ -98,9 +94,10 @@
             "title": "Country"
           },
           {
-            "field": "formatted_expense",
-            "type": "nominal",
-            "title": "Military expenditure"
+            "field": "2022",
+            "type": "quantitative",
+            "title": "Military expenditure",
+            "format": "~s"
           }
         ]
       }
