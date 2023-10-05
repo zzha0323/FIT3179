@@ -70,6 +70,10 @@
             "key": "Country Name",
             "fields": ["2022"]
           }
+        },
+        {
+          "calculate": "format(datum['2022'], '.2~s')",
+          "as": "formatted_expense"
         }
       ],
       "mark": {
@@ -85,10 +89,8 @@
             "type": "linear",
             "domain": [131072000, 327680000, 819200000, 2048000000, 5120000000, 128000000000, 320000000000, 800000000000],
             "range": ["#fdbe85", "#fcc89b", "#fd8d3c", "#fda95e", "#e6550d", "#e84d16", "#a63603", "#67000D"]
-
           }
-        }
-        ,        
+        },
         "tooltip": [
           {
             "field": "properties.NAME",
@@ -96,10 +98,9 @@
             "title": "Country"
           },
           {
-            "field": "2022",
-            "type": "quantitative",
-            "title": "Military expenditure",
-            "format": ".2f"
+            "field": "formatted_expense",
+            "type": "nominal",
+            "title": "Military expenditure"
           }
         ]
       }
