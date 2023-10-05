@@ -80,7 +80,7 @@
         "color": {
           "field": "2022",
           "type": "quantitative",
-          "title": "Military expenditure in 2022",
+          "title": "Military expenditure (current USD)",
           "scale": {
             "type": "linear",
             "domain": [131072000, 327680000, 819200000, 2048000000, 5120000000, 128000000000, 320000000000, 800000000000],
