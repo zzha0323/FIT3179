@@ -50,9 +50,8 @@
       ],
       "mark": {
         "type": "geoshape",
-        "fill": "#ddd",
-        "stroke": "white",
-        "strokeWidth": 1
+        "fill": "lightgray",
+        "stroke": "white"
       },
       "encoding": {
         "tooltip": {
@@ -99,7 +98,7 @@
               "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
               "format": {
                 "type": "topojson",
-                "feature": "ne_110m_graticules_30"
+                "feature": "ne_110m_admin_0_countries"
               }
             },
             "key": "properties.NAME"
@@ -112,8 +111,7 @@
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": "#fff",
-        "strokeWidth": 0.5
+        "stroke": "white"
       },
       "encoding": {
         "shape": {
@@ -137,7 +135,7 @@
         },
         "tooltip": [
           {
-            "field": "properties.NAME",
+            "field": "Country Name",
             "type": "nominal",
             "title": "Country"
           },
@@ -145,7 +143,7 @@
             "field": "Military Expenditure (current USD)",
             "type": "quantitative",
             "title": "Military expenditure",
-            "format": ".s"
+            "format": ",.0f"
           },
           {
             "field": "year",
