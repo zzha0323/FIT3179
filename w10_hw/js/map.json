@@ -3,6 +3,16 @@
   "title": "Military Expenditure in Current USD (1960-2022)",
   "width": "container",
   "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "ne_110m_admin_0_countries"
+    }
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
   "params": [
     {
       "name": "Year_selection",
@@ -14,34 +24,10 @@
         "step": 1,
         "name": "Year: "
       }
-    },
-    {
-      "name": "zoom_level",
-      "value": 30000,
-      "bind": {
-        "input": "range",
-        "min": 3500,
-        "max": 60000,
-        "step": 100,
-        "name": "Zoom: "
-      }
     }
   ],
-  "projection": {
-    "type": "equirectangular",
-    "scale": {
-      "expr": "zoom_level"
-    }
-  },
   "layer": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "ne_110m_admin_0_countries"
-        }
-      },
       "transform": [
         {
           "calculate": "'Data is not available in ' + datum.properties.NAME",
@@ -88,11 +74,11 @@
     },
     {
       "data": {
-        "url": "data/Military_expenditure_current_USD.csv"
+        "url": "data/Military_expenditure_cleaned.csv"
       },
       "transform": [
         {
-          "lookup": "properties.NAME",
+          "lookup": "Country Name",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
@@ -123,11 +109,8 @@
           "type": "quantitative",
           "title": "Military Expenditure (current USD)",
           "scale": {
-            "domain": [
-              131072000,
-              800000000000
-            ],
-            "scheme": "reds"
+            "domain": [131072000, 327680000, 819200000, 2048000000, 5120000000, 128000000000, 320000000000, 800000000000],
+            "range": ["#fdbe85", "#fcc89b", "#fd8d3c", "#fda95e", "#e6550d", "#e84d16", "#a63603", "#67000D"]
           },
           "legend": {
             "format": ".2s"
