@@ -65,7 +65,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "data/Military_expenditure_2022_current_USD.csv"
+              "url": "data/Military_expenditure_current_USD.csv"
             },
             "key": "Country Name",
             "fields": ["2022"]
