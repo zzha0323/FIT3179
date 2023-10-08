@@ -128,7 +128,7 @@
             "field": "Military Expenditure (current USD)",
             "type": "quantitative",
             "title": "Military expenditure",
-            "format": ".s"
+            "format": ".2s"
           },
           {
             "field": "year",
