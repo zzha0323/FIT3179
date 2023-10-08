@@ -1,0 +1,24 @@
+#choropleth_map {
+	position: absolute;
+	top:100px;
+	bottom: 100px; 
+	left: 100px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
+
+#vg-tooltip-element {
+	min-width: 300px;
+}
+
+#vg-tooltip-element .key,
+#vg-tooltip-element .value {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#vg-tooltip-element {
+	font-size: 10px;
+}
