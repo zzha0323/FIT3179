@@ -13,7 +13,7 @@
     "data": [
       {
         "name": "table",
-        "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/data/bubble.json",
+        "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
         "transform": [
           {"type": "formula", "as": "test", "expr": "datum.Procedure"},
           {
