@@ -2,10 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "title": "Military Expenditure in Current USD (2022)",
     "width": 400,
-    "height":300,
-    "padding": {"left": -40, "right": 0, "top": 2, "bottom": 0},
+    "height": 300,
+    "padding": {"left": 0, "right": 0, "top": 2, "bottom": 0},
     "signals": [
-      {"name": "cx", "update": "width / 1.9"},
+      {"name": "cx", "update": "width / 2"},
       {"name": "cy", "update": "height / 2"},
       {"name": "gravityX", "value": 0.3},
       {"name": "gravityY", "value": 0.8}
@@ -14,47 +14,83 @@
       {
         "name": "table",
         "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
+        "format": {"type": "json"},
         "transform": [
           {"type": "formula", "as": "test", "expr": "datum.Region"},
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Counts<63000, '',datum.test)"
+            "expr": "if(datum.Counts<63000, null, datum.test)"
           },
           {
             "type": "formula",
             "as": "Proc",
-            "expr": "if(datum.Counts<63000, '',datum.Proc)"
+            "expr": "if(datum.Counts<63000, null, datum.Proc)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='North Africa', ['North','Africa'],datum.test)"
+            "expr": "if(datum.Region=='North Africa', ['North Africa'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='sub-Saharan Africa', ['sub-Saharan','Africa'],datum.test)"
+            "expr": "if(datum.Region=='North America', ['North America'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='Birth defect', ['Birth','defect'],datum.test)"
+            "expr": "if(datum.Region=='South America', ['South America'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='Breast reduction', ['Breast','reduction'],datum.test)"
+            "expr": "if(datum.Region=='Oceania', ['Oceania'],datum.test)"
           },
           {
             "type": "formula",
-            "as": "rank",
-            "expr": "if(datum.rank>9, '',datum.rank)"
+            "as": "test",
+            "expr": "if(datum.Region=='South Asia', ['South Asia'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='East Asia', ['East Asia'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='South East Asia', ['South East Asia'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='Central Asia', ['Central Asia'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='Central Europe', ['Central Europe'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='Eastern Europe', ['Eastern Europe'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='Western Europe', ['Western Europe'],datum.test)"
+          },
+          {
+            "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='Middle East', ['Middle East'],datum.test)"
           },
           {
             "type": "formula",
             "as": "sizess",
-            "expr": "round(sqrt(sqrt(datum.Counts/40)))"
+            "expr": "sqrt(sqrt(datum.Counts/40))"
           }
         ]
       }
@@ -64,15 +100,16 @@
       {
         "name": "size",
         "domain": {"data": "table", "field": "Counts"},
-        "range": [1, 6000000]
+        "range": [1, 2000000]
       },
       {
         "name": "color",
         "type": "ordinal",
         "domain": {"data": "table", "field": "Continents"},
-        "range": ["#AF7C7B","#66c2a5", "#fc8d62", "#8da0cb"]
+        "range": ["#AF7C7B", "#66c2a5", "#fc8d62", "#8da0cb", "#FF5733"]
       }
     ],
+  
     "marks": [
       {
         "name": "nodes",
@@ -85,14 +122,11 @@
             "yfocus": {"signal": "cy"}
           },
           "update": {
-            "size": {
-              "signal": "pow(sqrt(sqrt(datum.Counts))*3.5, 2)",
-              "scale": "size"
-            },
+            "size": {"signal": "pow(sqrt(sqrt(datum.Counts))*3.5, 2)", "scale": "size"},
             "stroke": {"value": "white"},
             "strokeWidth": {"value": 1},
             "tooltip": {
-              "signal": "{\"Rank\": datum[\"Rank\"],\"Region\": datum[\"Region\"], \"Counts\": format(datum[\"Counts\"], \".3s\")}"
+              "signal": "{\"Rank\": datum[\"rank\"], \"Region\": datum[\"Region\"], \"Counts\": format(datum[\"Counts\"], \",.3s\")}"
             }
           }
         },
@@ -129,7 +163,6 @@
           "update": {"x": {"field": "x"}, "y": {"field": "y", "offset": -2}}
         }
       },
-      
       {
         "type": "text",
         "from": {"data": "nodes"},
@@ -145,7 +178,6 @@
           "update": {"x": {"field": "x"}, "y": {"field": "y", "offset": 20}}
         }
       },
-      
       {
         "type": "text",
         "from": {"data": "nodes"},
@@ -163,12 +195,15 @@
         }
       }
     ],
-     "legends": [
-      {"offset":33,
+  
+    "legends": [
+      {
+        "offset": 33,
         "fill": "color",
         "title": "Body Sections",
         "encode": {"labels": {"update": {"text": {"field": "value"}}}}
       }
     ],
-    "config": {}
+    "config": {"axis": {"labels": false, "domain": false, "ticks": false}}
   }
+  
