@@ -35,12 +35,12 @@
       "joinaggregate": [{"op": "sum", "field": "Regional totals", "as": "sumCounts"}],
       "groupby": ["Year"]
     },
-    {"calculate": "datum.Regional totals/1000000", "as": "Count"},
+    {"calculate": "datum.Regional totals", "as": "Count"},
     {
-      "filter": "Procedure_Selection == null || datum.Procedure == Procedure_Selection"
+      "filter": "Region_Selection == null || datum.Region == Region_Selection"
     },
     {
-      "filter": "datum.Procedure == 'Europe' || datum.Procedure == 'Americas' || datum.Procedure == 'Asia & Oceania' || datum.Procedure == 'Africa' || datum.Procedure == 'Middle East'"
+      "filter": "datum.Region == 'Europe' || datum.Region == 'Americas' || datum.Region == 'Asia & Oceania' || datum.Region == 'Africa' || datum.Region == 'Middle East'"
     }
   ],
   "mark": "area",
@@ -56,10 +56,10 @@
       "aggregate": "sum",
       "field": "Count",
       "axis": {"tickCount": 3},
-      "title": "Counts (in million)"
+      "title": "Military Costs (in billion)"
     },
     "color": {
-      "field": "Procedure",
+      "field": "Region",
       "scale": {
         "domain": [
           "Africa",
@@ -74,7 +74,7 @@
       
     },
     "tooltip": [
-      {"field": "Procedure", 
+      {"field": "Region", 
       "type": "nominal"},
       {
         "field": "Year",
