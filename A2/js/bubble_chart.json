@@ -13,7 +13,7 @@
     "data": [
       {
         "name": "table",
-        "url": "js/bubble.json",
+        "url": "data/bubble.json",
         "transform": [
           {"type": "formula", "as": "test", "expr": "datum.Procedure"},
           {
