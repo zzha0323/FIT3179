@@ -1,14 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "title": "Military Expenditure in Current USD (2022)",
-    "width": 400,
-    "height": 300,
-    "padding": {"left": 0, "right": 0, "top": 2, "bottom": 0},
+    "width": 480,
+    "height": 350,
+    "padding": {"left": 0, "right": 0, "top": 0, "bottom": 0},
     "signals": [
       {"name": "cx", "update": "width / 2"},
       {"name": "cy", "update": "height / 2"},
       {"name": "gravityX", "value": 0.3},
-      {"name": "gravityY", "value": 0.8}
+      {"name": "gravityY", "value": 0.7}
     ],
     "data": [
       {
@@ -30,7 +30,7 @@
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='North Africa', ['North Africa'],datum.test)"
+            "expr": "if(datum.Region=='sub-Saharan Africa', ['sub-Saharan Africa'],datum.test)"
           },
           {
             "type": "formula",
@@ -45,32 +45,12 @@
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='Oceania', ['Oceania'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
             "expr": "if(datum.Region=='South Asia', ['South Asia'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
             "expr": "if(datum.Region=='East Asia', ['East Asia'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='South East Asia', ['South East Asia'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='Central Asia', ['Central Asia'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='Central Europe', ['Central Europe'],datum.test)"
           },
           {
             "type": "formula",
@@ -100,7 +80,7 @@
       {
         "name": "size",
         "domain": {"data": "table", "field": "Counts"},
-        "range": [1, 2000000]
+        "range": [1, 3000000]
       },
       {
         "name": "color",
@@ -160,37 +140,6 @@
             "fill": {"value": "black"},
             "text": {"field": "datum.test"}
           },
-          "update": {"x": {"field": "x"}, "y": {"field": "y", "offset": -2}}
-        }
-      },
-      {
-        "type": "text",
-        "from": {"data": "nodes"},
-        "encode": {
-          "enter": {
-            "align": {"value": "center"},
-            "baseline": {"value": "middle"},
-            "fontSize": {"field": "datum.sizess"},
-            "fontWeight": {"value": "bold"},
-            "fill": {"value": "black"},
-            "text": {"field": "datum.Proc"}
-          },
-          "update": {"x": {"field": "x"}, "y": {"field": "y", "offset": 20}}
-        }
-      },
-      {
-        "type": "text",
-        "from": {"data": "nodes"},
-        "encode": {
-          "enter": {
-            "align": {"value": "center"},
-            "baseline": {"value": "middle"},
-            "fontSize": {"field": "datum.sizess"},
-            "fontWeight": {"value": "bold"},
-            "fill": {"value": "black"},
-            "text": {"field": "datum.rank"},
-            "radius": {"value": 21}
-          },
           "update": {"x": {"field": "x"}, "y": {"field": "y"}}
         }
       }
@@ -198,7 +147,6 @@
   
     "legends": [
       {
-        "offset": 33,
         "fill": "color",
         "title": "Continents",
         "encode": {"labels": {"update": {"text": {"field": "value"}}}}
