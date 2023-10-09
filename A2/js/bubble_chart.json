@@ -126,7 +126,7 @@
             "stroke": {"value": "white"},
             "strokeWidth": {"value": 1},
             "tooltip": {
-              "signal": "{\"Rank\": datum[\"rank\"], \"Region\": datum[\"Region\"], \"Counts\": format(datum[\"Counts\"], \",.2s\")}"
+              "signal": "{\"Rank\": datum[\"rank\"], \"Region\": datum[\"Region\"], \"Counts\": format(datum[\"Counts\"], \".2s\")}"
             }
           }
         },
