@@ -16,36 +16,10 @@
         "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
         "format": {"type": "json"},
         "transform": [
-          {"type": "formula", "as": "test", "expr": "datum.Region"},
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Counts<100000, null, datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "Proc",
-            "expr": "if(datum.Counts<100000, null, datum.Proc)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='sub-Saharan Africa', ['sub-Saharan Africa'],datum.test)"
-          },
           {
             "type": "formula",
             "as": "test",
             "expr": "if(datum.Region=='North America', ['North America'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='South America', ['South America'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='South Asia', ['South Asia'],datum.test)"
           },
           {
             "type": "formula",
