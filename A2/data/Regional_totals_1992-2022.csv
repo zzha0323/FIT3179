@@ -1,8 +1,4 @@
 ﻿Region,Costs,Year
-Africa,16.2,1988
-Africa,16.3,1989
-Africa,16.3,1990
-Africa,14.4,1991
 Africa,13.4,1992
 Africa,15.2,1993
 Africa,60.1,1994
@@ -34,10 +30,6 @@ Africa,37.2,2019
 Africa,39.0,2020
 Africa,40.0,2021
 Africa,37.9,2022
-Americas,761.6,1988
-Americas,754.0,1989
-Americas,720.3,1990
-Americas,637.1,1991
 Americas,667.9,1992
 Americas,637.6,1993
 Americas,609.4,1994
@@ -69,10 +61,6 @@ Americas,858.3,2019
 Americas,897.7,2020
 Americas,888.4,2021
 Americas,891.1,2022
-Asia & Oceania,142.4,1988
-Asia & Oceania,149.8,1989
-Asia & Oceania,156.8,1990
-Asia & Oceania,159.6,1991
 Asia & Oceania,167.2,1992
 Asia & Oceania,171.1,1993
 Asia & Oceania,172.2,1994
@@ -104,10 +92,6 @@ Asia & Oceania,549.0,2019
 Asia & Oceania,567.8,2020
 Asia & Oceania,580.4,2021
 Asia & Oceania,595.9,2022
-Europe,615.6,1988
-Europe,601.0,1989
-Europe,545.5,1990
-Europe,...,1991
 Europe,356.9,1992
 Europe,332.8,1993
 Europe,326.1,1994
@@ -139,10 +123,6 @@ Europe,387.3,2019
 Europe,407.9,2020
 Europe,420.7,2021
 Europe,477.0,2022
-Middle East,66.4,1988
-Middle East,63.1,1989
-Middle East,88.0,1990
-Middle East,97.6,1991
 Middle East,82.6,1992
 Middle East,77.8,1993
 Middle East,76.0,1994
