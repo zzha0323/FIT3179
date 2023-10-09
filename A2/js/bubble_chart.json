@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "title": "Military Expenditure in Current USD (2022)",
-    "width": 480,
-    "height": 350,
+    "width": 380,
+    "height": 300,
     "padding": {"left": 0, "right": 0, "top": 0, "bottom": 0},
     "signals": [
       {"name": "cx", "update": "width / 2"},
@@ -43,8 +43,8 @@
           },
           {
             "type": "formula",
-            "as": "sizess",
-            "expr": "sqrt(sqrt(datum.Counts/40))"
+            "as": "sizes",
+            "expr": "sqrt(sqrt(datum.Counts/25))"
           }
         ]
       }
@@ -54,7 +54,7 @@
       {
         "name": "size",
         "domain": {"data": "table", "field": "Counts"},
-        "range": [1, 3000000]
+        "range": [1, 2000000]
       },
       {
         "name": "color",
@@ -87,7 +87,7 @@
         "transform": [
           {
             "type": "force",
-            "iterations": 100,
+            "iterations": 50,
             "static": false,
             "forces": [
               {
@@ -109,7 +109,7 @@
           "enter": {
             "align": {"value": "center"},
             "baseline": {"value": "middle"},
-            "fontSize": {"field": "datum.sizess"},
+            "fontSize": {"field": "datum.sizes"},
             "fontWeight": {"value": "bold"},
             "fill": {"value": "black"},
             "text": {"field": "datum.test"}
@@ -126,6 +126,6 @@
         "encode": {"labels": {"update": {"text": {"field": "value"}}}}
       }
     ],
-    "config": {"axis": {"labels": false, "domain": false, "ticks": false}}
+    "config": {}
   }
   
