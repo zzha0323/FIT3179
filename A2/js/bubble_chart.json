@@ -15,7 +15,7 @@
         "name": "table",
         "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
         "transform": [
-          {"type": "formula", "as": "test", "expr": "datum.Procedure"},
+          {"type": "formula", "as": "test", "expr": "datum.Region"},
           {
             "type": "formula",
             "as": "test",
@@ -29,22 +29,22 @@
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Procedure=='Breast reconstruction', ['Breast','reconstruction'],datum.test)"
+            "expr": "if(datum.Region=='Breast reconstruction', ['Breast','reconstruction'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Procedure=='Maxillofacial surgery', ['Maxillofacial','surgery'],datum.test)"
+            "expr": "if(datum.Region=='Maxillofacial surgery', ['Maxillofacial','surgery'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Procedure=='Birth defect', ['Birth','defect'],datum.test)"
+            "expr": "if(datum.Region=='Birth defect', ['Birth','defect'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Procedure=='Breast reduction', ['Breast','reduction'],datum.test)"
+            "expr": "if(datum.Region=='Breast reduction', ['Breast','reduction'],datum.test)"
           },
           {
             "type": "formula",
@@ -92,7 +92,7 @@
             "stroke": {"value": "white"},
             "strokeWidth": {"value": 1},
             "tooltip": {
-              "signal": "{\"Rank\": datum[\"Rank\"],\"Procedure\": datum[\"Procedure\"], \"Counts\": format(datum[\"Counts\"], \".3s\")}"
+              "signal": "{\"Rank\": datum[\"Rank\"],\"Region\": datum[\"Region\"], \"Counts\": format(datum[\"Counts\"], \".3s\")}"
             }
           }
         },
