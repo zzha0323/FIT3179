@@ -29,12 +29,12 @@
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='Breast reconstruction', ['Breast','reconstruction'],datum.test)"
+            "expr": "if(datum.Region=='North Africa', ['North','Africa'],datum.test)"
           },
           {
             "type": "formula",
             "as": "test",
-            "expr": "if(datum.Region=='Maxillofacial surgery', ['Maxillofacial','surgery'],datum.test)"
+            "expr": "if(datum.Region=='sub-Saharan Africa', ['sub-Saharan','Africa'],datum.test)"
           },
           {
             "type": "formula",
@@ -49,7 +49,7 @@
           {
             "type": "formula",
             "as": "rank",
-            "expr": "if(datum.Rank>9, '',datum.Rank)"
+            "expr": "if(datum.rank>9, '',datum.rank)"
           },
           {
             "type": "formula",
@@ -69,7 +69,7 @@
       {
         "name": "color",
         "type": "ordinal",
-        "domain": {"data": "table", "field": "Body sections"},
+        "domain": {"data": "table", "field": "Continents"},
         "range": ["#AF7C7B","#66c2a5", "#fc8d62", "#8da0cb"]
       }
     ],
@@ -80,7 +80,7 @@
         "from": {"data": "table"},
         "encode": {
           "enter": {
-            "fill": {"scale": "color", "field": "Body sections"},
+            "fill": {"scale": "color", "field": "Continents"},
             "xfocus": {"signal": "cx"},
             "yfocus": {"signal": "cy"}
           },
