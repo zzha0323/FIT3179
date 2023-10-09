@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Military Expenditure in Current USD (1960 - 2022)",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "ne_110m_admin_0_countries"
+    }
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1960,
+        "max": 2022,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      },
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "oceans"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "skyblue"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_graticules_30"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "lightgray"
+      }
+    },
+    {
+      "data": {
+        "url": "data/Military_expenditure_cleaned.csv"
+      },
+      "transform": [
+        {
+          "lookup": "Country Name",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "key": "properties.NAME"
+          },
+          "as": "geo"
+        },
+        {
+          "filter": "datum.year == Year_selection"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white"
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "Military Expenditure (current USD)",
+          "type": "quantitative",
+          "title": "Military Expenditure (current USD)",
+          "scale": {
+            "domain": [131072000, 327680000, 819200000, 2048000000, 5120000000, 128000000000, 320000000000, 800000000000],
+            "range": ["#fdbe85", "#fcc89b", "#fd8d3c", "#fda95e", "#e6550d", "#e84d16", "#a63603", "#67000D"]
+          },
+          "legend": {
+            "format": ".2s"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Country Name",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "Military Expenditure (current USD)",
+            "type": "quantitative",
+            "title": "Military expenditure",
+            "format": ",.0f"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
