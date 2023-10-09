@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"title": "Military Expenditure in Regional Totals (1988-2022)",
+  "width": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/dataset/ASS2_reconstructive_procedures%20-%20Sheet1.csv"
+  },
+  "params": [
+    {
+      "name": "Procedure_Selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Africa",
+          "Americas",
+          "Asia & Oceania",
+          "Europe",
+          "Middle East"
+        ],
+        "labels": [
+          "Show All",
+          "Africa",
+          "Americas",
+          "Asia & Oceania",
+          "Europe",
+          "Middle East"
+        ],
+        "name": "Procedure: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "joinaggregate": [{"op": "sum", "field": "Counts", "as": "sumCounts"}],
+      "groupby": ["Year"]
+    },
+    {"calculate": "datum.Counts/1000000", "as": "Count"},
+    {
+      "filter": "Procedure_Selection == null || datum.Procedure == Procedure_Selection"
+    },
+    {
+      "filter": "datum.Procedure == 'Europe' || datum.Procedure == 'Americas' || datum.Procedure == 'Asia & Oceania' || datum.Procedure == 'Africa' || datum.Procedure == 'Middle East'"
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "axis": {"format": "%Y", "tickCount": 6},
+      "title": "Year"
+    },
+    "y": {
+
+      "aggregate": "sum",
+      "field": "Count",
+      "axis": {"tickCount": 3},
+      "title": "Counts (in million)"
+    },
+    "color": {
+      "field": "Procedure",
+      "scale": {
+        "domain": [
+          "Africa",
+          "Americas",
+          "Asia & Oceania",
+          "Europe",
+          "Middle East"
+        ],
+        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#377eb8", "#a6cee3"]
+      },
+        "legend": {"columns": 3}
+      
+    },
+    "tooltip": [
+      {"field": "Procedure", 
+      "type": "nominal"},
+      {
+        "field": "Year",
+        "title": "Year",
+        "type": "temporal",
+        "timeUnit": "year"
+      },
+      {
+        "field": "Counts",
+        "type": "quantitative",
+        "title": "Counts",
+        "format": ".2s"
+      }
+    ]
+  },
+  "config": {"legend": {"orient": "bottom"}}
+}
