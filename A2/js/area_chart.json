@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 "title": "Military Expenditure in Regional Totals (1992 - 2022)",
   "width": 380,
-  "height": 188,
+  "height": 218,
   "data": {
     "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/Regional_totals_1992-2022.csv"
   },
