@@ -1,17 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Military Expenditure in Current USD (1960 - 2022)",
-  "width": "container",
-  "height": 400,
+  "width": 650,
+  "height": 320,
+  "projection": {
+    "type": "equalEarth"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
     "format": {
       "type": "topojson",
       "feature": "ne_110m_admin_0_countries"
     }
-  },
-  "projection": {
-    "type": "equalEarth"
   },
   "params": [
     {
@@ -109,8 +109,20 @@
           "type": "quantitative",
           "title": "Military Expenditure (current USD)",
           "scale": {
-            "domain": [131072000, 327680000, 819200000, 2048000000, 5120000000, 128000000000, 320000000000, 800000000000],
-            "range": ["#fdbe85", "#fcc89b", "#fd8d3c", "#fda95e", "#e6550d", "#e84d16", "#a63603", "#67000D"]
+            "domain": [
+              500000000,
+              5000000000,
+              5000000000,
+              50000000000,
+              500000000000
+            ],
+            "range": [
+              "#ffeda0",
+              "#fed98e",
+              "#fe9929",
+              "#d95f0e",
+              "#993404"
+            ]
           },
           "legend": {
             "format": ".2s"

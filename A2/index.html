@@ -1,30 +1,366 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <title>THE CRAZE FOR PLASTIC SURGERY IN THE US</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
 </head>
+<body style="background:#9ed9e7">
 <body>
-  <div id="choropleth_map"></div>
+
+  <div class="spacing2"></div>
+
+<div class="page2">
+    <!-- pure grid group -->
+    <div class="spacing2"></div>
+    <!-- end pure grid group -->
+
+  <div class="spacing4"></div>
+    <div id="container">
+      <div class="center"><h2 style="font-size: 100px"> </h2>
+      </div>
+   </div>
+</div>
+<div class="page3">
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+      <div class="description description-left">
+        <p>Plastic surgery is a procedure involving restoration, reconstruction, or alteration of the human body. Every year, more people undergo plastic surgery due to health benefits and society's emphasis on beauty. The <b>US</b> is the land of plastic surgery, ranking <b>1st</b> in the world with over <b>20 million procedures</b> done in 2020 alone. </p>
+        <p>Plastic surgery can be divided into two main categories: <b>reconstructive surgery</b> and <b>cosmetic surgery</b>. </p>
+      </div>
+    </div>
+    </div>
+    <!-- end pure grid group -->
+  </div>
+    <div class="spacing">
+    </div>
+  
+    <div class="page">
+    <br>
+
+    <!-- pure grid group -->
+    <div class="center">
+      <div class="pure-u-1-1"></div>
+      <div id="vis2"></div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+        <p>The map visualisation shows the Google Trends Relative Search Volumes for all searches for <b>"plastic surgery"</b> in each state in 2020.
+        </p>          
+        <p>The 2 cities with the least population: <b>Vermont</b> and <b>Wyoming</b>, have the highest interest in plastic surgery with <b">10 out of 100,000</b> people looking up plastic surgeries in google search. 
+        </p>
+        
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <p> 
+          Big cities like <b>California</b>, <b>Texas</b>, and <b>New York</b> have the least interest in plastic surgery with close to <b>0</b> people looking up plastic surgeries in google search. 
+        </p>    
+        <p>        
+          However, keep in mind that looking up plastic surgery does not actually mean undergoing the surgery and high google search does not equal high demand.
+        </p>      
+      </div>
+    </div>
+    <!-- end pure grid group -->
+  </div>
+  <div class="spacing">
+  </div>
+
+  <div class="page">
+  <br>
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div class="description description-left">
+              <h2>Reconstructive Surgery</h2>
+            <p>Reconstructive surgery is surgery performed to restore normal appearance and function to body parts malformed by a disease or medical condition.
+            </p>
+          </div>
+        </div>
+        <!-- end pure grid group -->
+        <p> </p>
+
+        
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="vis10" class="vis-container"></div>
+        </div>
+      <div class="pure-u-1-2">
+        <div id="vis12" class="box6" ></div>
+      </div>
+    </div>
+  </div>
+
+    <br>
+    <!-- end pure grid group -->
+   
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <p>The packed bubble shows the number of each reconstructive procedures performed in 2020. </p>          
+          <p><b><span style="color: #377eb8">Tumor removal</span></b> is the <b>most popular</b> procedure, with around <b>5.2 million</b> procedures performed in 2020 alone due to the increasing cancer rate.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <p>The area chart shows the top 5 Reconstructive surgeries performed in the US from 2010 to 2020. </p>  
+        <p>There is an <b>increasing trend</b> in the number of reconstructive surgeries performed in the US despite the Covid-19 pandemic. </p>
+          
+      </div>
+    </div>
+  </div>
+    <!-- end pure grid group -->
+
+ 
+
+
+    
+  </div>
+  <div class="spacing">
+  </div>
+  
+  <div class="page">
+  <br>
+  
+        <!-- pure grid group -->
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div class="description description-left">
+              <h2>Cosmetic Surgery</h2>
+              <p><b>Cosmetic surgery</b> is surgery performed to change physical appearance for cosmetic rather than medical reasons. </p>
+              <p>Cosmetic surgery can be classified into 2 categories: <b><span style="color: #E66100">minimally invasive procedures</span></b> and <b><span style="color: #5D3A9B">surgical procedures</span></b>. <b><span style="color: #E66100">Minimally invasive procedures</span></b> are smaller procedures that involve minimal incision. </p>
+            </p>
+          </div>
+        </div>
+        <!-- end pure grid group -->
+
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <p>The area chart shows the total number of cosmetic surgeries performed in the US from 2010 to 2020. </p>
+        </div>
+        <div class="description description-left">
+          <p>There is an <b>increasing trend</b> in the total number of cosmetic surgeries in the US, peaking in <b>2019</b> with <b>18.4 million</b> procedures before <b>decreasing</b> in <b>2020</b>. Unlike reconstructive surgeries, cosmetic surgeries are not urgent and therefore, hospitals halted cosmetic procedures during the covid-19 pandemic, causing the decline.
+          </p>
+        </div>
+        <div class="description description-left">
+          <p><b><span style="color: #E66100">Minimally invasive procedures</span></b> are <b>more popular</b> than <b><span style="color: #5D3A9B">surgical procedures</span></b> due to less scarring, less expensive, and less permanent impact on the body as some people are not ready to make the big permanent decision.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis4" class="vis-container"; ></div>
+      </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+       
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="vis5" class="vis-container"></div>
+        </div>
+      <div class="pure-u-1-2">
+      <div class="box">
+          <p>The tree map shows the total number of cosmetic surgery procedures done in the US in 2020, categorised into 3 body parts: <b><span style="color: #8da0cb">head</span></b>, <b><span style="color: #66c2a5">torso</span></b>, and <b><span style="color: #fc8d62">limbs</span></b>. </p>
+        </div>
+        <div class="box">
+          <p>Most people undergo cosmetic surgery on the <b><span style="color: #8da0cb">head</span></b> area due to society's emphasis on facial over body attractiveness.
+          </p>
+        </div>
+        <div class="box">
+          <p><b>Nose reshaping</b> is the <b>most popular</b> cosmetic procedure with a whopping <b>353,000</b> procedures done in 2020. The nose is located at the centre of the face, being the most visible feature, it is no surprise that nose reshaping is the most popular procedure.
+          </p>
+          <br>
+      </div>
+  </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <p> </p>
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <p>The histogram shows the age distribution of plastic surgery patients in the US in 2020.</p>
+        </div>
+        <div class="description description-left">
+          <p>Most people undergo cosmetic surgery <b>between the age of 40-54</b>. Cosmetic surgery is becoming more popular to older generations as people are more open with the idea of plastic surgery compared to the past. Also, older people are turning towards cosmetic surgeries to look young, mainly <b><span style="color: #E66100">minimally invasive procedures</span></b> to reduce wrinkles and tightens the skin.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis6" class="vis-container"></div>
+      </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+  </div>
+  <div class="spacing">
+  </div>
+  
+  <div class="page">
+  <br>
+        <!-- pure grid group -->
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div class="description description-left">
+              <h2></h2>
+            </div>
+          </div>
+
+        <!-- end pure grid group -->
+          <!-- pure grid group -->
+          <div class="pure-g">
+            <div class="pure-u-1-2" class="center">
+              <div id="vis7" class="box7"></div>
+            </div>
+            <div class="pure-u-1-2">
+          <div class="description description-right">
+            <p>The pie chart shows <b><span style="color: #d7ba00">female</span></b> to <b><span style="color: #235789">male</span></b> ratio of cosmetic surgery patients.</p>
+            <p>The cosmetic surgery industry is <b><span style="color: #d7ba00">female</span></b> dominated, with <b>92%</b> of patients being <b><span style="color: #d7ba00">female</span></b> as they tend to accept cosmetic surgery more than <b><span style="color: #235789">males</span></b> due to the high expectations regarding their physical appearance.
+              </p>
+            </div>
+            <br> <p>  </p>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- pure grid group -->
+  <div class="pure-g"><div class="center">
+  <div class="pure-u-1-1">
+  <div id="vis11"></div>
+  </div>
+  </div>
+</div>
+  
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <p>The bar chart shows the top 5 most popular cosmetic procedure among <b><span style="color: #d7ba00">female</span></b> and <b><span style="color: #235789">male</span></b>.
+        </p>
+        <p><b>Eyelid surgery</b>, <b>breast augmentation</b>, and <b>liposuction</b> remains in the <b>top 3</b> most popular procedure among <b><span style="color: #d7ba00">female</span></b> for <b>11 consecutive years</b>.
+        </p>
+      </p>
+      <p><b>Breast augmentation</b> have been the <b>top 1</b> most popular cosmetic procedure among <b><span style="color: #d7ba00">females</span></b> until recently in 2020, but it is believed that the decrease in not due to losing popularity, but rather the covid-19 restrictions.
+      </p>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+        <p><b>Nose reshaping</b> and <b>eyelid surgery</b> is the <b>top 2</b> most popular procedures among <b><span style="color: #235789">males</span></b> for <b>11 consecutive years</b>.
+      </p>
+      <p><b>Liposuction</b> (the removal of fat under the skin) is popular among both <b><span style="color: #235789">males</span></b> and <b><span style="color: #d7ba00">female</span></b> due to the influence of social media on slim and fit bodies.              
+      </p>
+      <p><b>Nose reshaping</b> have been the <b>top 1</b> most popular cosmetic procedure among <b><span style="color: #235789">males</span></b> even to this day. <b><span style="color: #235789">Males</span></b> turn to nose reshaping as a way to look more masculine and gain confidence.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <p style = "text-align: right; font-size: 15px">Source: <a href="https://www.plasticsurgery.org/news/plastic-surgery-statistics">ASPS</a></p>
+
+  <p style = "text-align: center"><b>Cherline Delfina Tandra | FIT3179 - Data Visualisation 2</b></p>
+  <!-- end pure grid group -->
+
+  </div> <!-- end page -->
+<br>
+<p> </p>
+<br>
+
+
+
+  
   <script type="text/javascript">
-    var spec2 = "js/map.json";
-    vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    var specVis1 = "";
+    var specVis2 = "js/map.json";
+    var specVis12 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/test.json";
+    var specVis4 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/No.%20of%20Plastic%20Surgery%20in%20the%20US%20(2010-2020).json";
+    var specVis5 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/tree%20map.json";
+    var specVis6 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/Age%20of%20Plastic%20Surgery%20Patients.json";
+    var specVis7 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/gender%20pie%20chart.json";
+    var specVis8 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/ASS2_female_slider.json";
+    var specVis9 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/ASS2_male_slider.json";
+    var specVis10 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/bubble.json";
+    var specVis11 = "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/visualisation/ASS2_male_female_bar.json";
+    
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis12', specVis12, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis8', specVis8, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis9', specVis9, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis10', specVis10, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis11', specVis11, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
   
-  <div class="pure-u-1-2">
-  <!-- First Paragraph -->
-  <p>The map displays military expenditure data for various countries over the specified time range (1960 - 2022). All the data is collected through open source. Some countries are shaded in light gray color as their data is not available in that specific year.</p>
-
-  <!-- Second Paragraph -->
-  <p>The map shows that the United States has the greatest military spending at all times.</p>
-  </div>
-
 </body>
+
 </html>
