@@ -3,7 +3,6 @@
     "title": "Military Expenditure by Continents (2022)",
     "width": 380,
     "height": 300,
-    "padding": {"left": 0, "right": 0, "top": 0, "bottom": 0},
     "signals": [
       {"name": "cx", "update": "width / 2"},
       {"name": "cy", "update": "height / 2"},
