@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "title": "Reconstructive Surgery in the US (2020)",
+    "title": "Military Expenditure in Current USD (2022)",
     "width": 400,
     "height":300,
     "padding": {"left": -40, "right": 0, "top": 2, "bottom": 0},
@@ -13,7 +13,7 @@
     "data": [
       {
         "name": "table",
-        "url": "data/bubble.json",
+        "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/data/bubble.json",
         "transform": [
           {"type": "formula", "as": "test", "expr": "datum.Procedure"},
           {
