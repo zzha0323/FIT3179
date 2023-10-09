@@ -32,10 +32,10 @@
   ],
   "transform": [
     {
-      "joinaggregate": [{"op": "sum", "field": "Counts", "as": "sumCounts"}],
+      "joinaggregate": [{"op": "sum", "field": "Regional totals", "as": "sumCounts"}],
       "groupby": ["Year"]
     },
-    {"calculate": "datum.Counts/1000000", "as": "Count"},
+    {"calculate": "datum.Regional totals/1000000", "as": "Count"},
     {
       "filter": "Procedure_Selection == null || datum.Procedure == Procedure_Selection"
     },
