@@ -2,63 +2,63 @@
   {
     "Region": "North Africa",
     "Counts": 15297.0,
-    "Proc": "15.29B",
+    "Proc": "15.29G",
     "rank": 12,
     "Continents": "Africa"
   },
   {
     "Region": "sub-Saharan Africa",
     "Counts": 20073.8,
-    "Proc": "20.07B",
+    "Proc": "20.07G",
     "rank": 11,
     "Continents": "Africa"
   },
   {
     "Region": "Central America and the Caribbean",
     "Counts": 11163.3,
-    "Proc": "11.16B",
+    "Proc": "11.16G",
     "rank": 13,
     "Continents": "Americas"
   },
   {
     "Region": "North America",
     "Counts": 903839.5,
-    "Proc": "903.84B",
+    "Proc": "903.84G",
     "rank": 1,
     "Continents": "Americas"
   },
   {
     "Region": "South America",
     "Counts": 46097.0,
-    "Proc": "46.10B",
+    "Proc": "46.10G",
     "rank": 7,
     "Continents": "Americas"
   },
   {
     "Region": "Oceania",
     "Counts": 35292.3,
-    "Proc": "35.29B",
+    "Proc": "35.29G",
     "rank": 10,
     "Continents": "Asia & Oceania"
   },
   {
     "Region": "South Asia",
     "Counts": 97988.66419,
-    "Proc": "97.99B",
+    "Proc": "97.99G",
     "Rank": 6,
     "Continents": "Asia & Oceania"
   },
   {
     "Region": "East Asia",
     "Counts": 396942.9,
-    "Proc": "396.94B",
+    "Proc": "396.94G",
     "rank": 2,
     "Continents": "Asia & Oceania"
   },
   {
     "Region": "South East Asia",
     "Counts": 36982.7,
-    "Proc": "36.98B",
+    "Proc": "36.98G",
     "rank": 9,
     "Continents": "Asia & Oceania"
   },
@@ -72,28 +72,28 @@
   {
     "Region": "Central Europe",
     "Counts": 39433.4,
-    "Proc": "39.43B",
+    "Proc": "39.43G",
     "rank": 8,
     "Continents": "Europe"
   },
   {
     "Region": "Eastern Europe",
     "Counts": 135386.0,
-    "Proc": "135.39B",
+    "Proc": "135.39G",
     "rank": 5,
     "Continents": "Europe"
   },
   {
     "Region": "Western Europe",
     "Counts": 305501.9,
-    "Proc": "305.50B",
+    "Proc": "305.50G",
     "rank": 3,
     "Continents": "Europe"
   },
   {
     "Region": "Middle East",
     "Counts": 163123.0,
-    "Proc": "163.12B",
+    "Proc": "163.12G",
     "rank": 4,
     "Continents": "Middle East"
   }
