@@ -215,7 +215,7 @@
   "legends": [
     {
       "fill": "color",
-      "title": "Regions",
+      "title": "Region",
       "encode": {
         "labels": {
           "update": {
