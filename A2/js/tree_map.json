@@ -96,7 +96,7 @@
         "#d95f0e",
         "#fe9929",
         "#fed98e",
-        "lightgray"
+        "#ffeda0"
       ]
     }
   ],
@@ -243,7 +243,7 @@
   "legends": [
     {
       "fill": "color",
-      "title": "Body Sections",
+      "title": "Regions",
       "encode": {
         "labels": {
           "update": {

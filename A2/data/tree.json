@@ -141,13 +141,13 @@
         "parent": 27
     },
     {
-        "id": 25,
-        "name": "Middle East",
+        "id": 26,
+        "name": "Other",
         "parent": 27
     },
     {
-        "id": 26,
-        "name": "Other",
+        "id": 25,
+        "name": "Middle East",
         "parent": 27
     },
     {
