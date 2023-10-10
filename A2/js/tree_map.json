@@ -20,12 +20,6 @@
       "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/tree.json",
       "transform": [
         {
-          "type": "formula",
-          "as": "sizes",
-          "expr": "sqrt(datum.size/1000)"
-        },
-        
-        {
           "type": "stratify",
           "key": "id",
           "parentKey": "parent"
