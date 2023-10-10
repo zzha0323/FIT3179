@@ -25,11 +25,6 @@
           "expr": "sqrt(datum.size/1000)"
         },
         {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Lip reduction', '' ,datum.name)"
-        },
-        {
           "type": "stratify",
           "key": "id",
           "parentKey": "parent"
