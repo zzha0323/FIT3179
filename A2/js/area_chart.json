@@ -86,7 +86,7 @@
       {
         "field": "Costs",
         "type": "quantitative",
-        "title": "Military Expenditure (US$ bn)",
+        "title": "Costs (US$ bn)",
         "format": ".2s"
       }
     ]

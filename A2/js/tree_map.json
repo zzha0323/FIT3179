@@ -139,7 +139,7 @@
             "value": "#fff"
           },
           "tooltip": {
-            "signal": "{\"Procedure\": datum[\"name\"], \"Counts\": format(datum[\"size\"], \".3s\")}"
+            "signal": "{\"Country\": datum[\"name\"], \"Counts\": format(datum[\"size\"], \".3s\")}"
           }
         },
         "update": {
