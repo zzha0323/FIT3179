@@ -189,7 +189,7 @@
             "value": "bold"
           },
           "fill": {
-            "value": "black"
+            "value": "white"
           },
           "text": {
             "field": "datum.test"
