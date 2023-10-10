@@ -1,0 +1,168 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 528,
+  "height": 282,
+  "padding": 0,
+
+  "signals": [{"name": "layout", "value": "squarify"}, {"name": "aspectRatio"}],
+  "title": {"text": "Top Cosmetic Procedures in the US (2020)"},
+  
+  "data": [
+    {
+      "name": "tree",
+      "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/tree.json",
+      "transform": [
+        {"type": "formula", "as": "sizes", "expr": "sqrt(datum.size/800)"},
+        {
+          "type": "formula",
+          "as": "sizes",
+          "expr": "if(datum.name=='Breast implant removals', 6,datum.sizes)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Lip reduction', '' ,datum.name)"
+        },
+        {
+          "type": "formula",
+          "as": "sizes",
+          "expr": "if(datum.name=='Forehead lift', 9,datum.sizes)"
+        },
+        {
+          "type": "formula",
+          "as": "sizess",
+          "expr": "round(datum.size/1000) +'k'"
+        },
+        {
+          "type": "formula",
+          "as": "sizess",
+          "expr": "if(datum.name=='Lip reduction', '' ,datum.sizess)"
+        },
+        {
+          "type": "formula",
+          "as": "sizess",
+          "expr": "if(datum.name=='Hair transplantation', '' ,datum.sizess)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Hair transplantation', '' ,datum.names)"
+        },
+        {"type": "stratify", "key": "id", "parentKey": "parent"},
+        {
+          "type": "treemap",
+          "field": "size",
+          "sort": {"field": "value"},
+          "round": true,
+          "method": {"signal": "layout"},
+          "ratio": {"signal": "aspectRatio"},
+          "size": [{"signal": "width"}, {"signal": "height"}]
+        }
+      ]
+    },
+    {
+      "name": "nodes",
+      "source": "tree",
+      "transform": [
+        {"type": "filter", "expr": "datum.children"},
+        {"type": "filter", "expr": "datum.name!='Procedures'"}
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [{"type": "filter", "expr": "!datum.children"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "nodes", "field": "name"},
+      "range": ["#66c2a5", "#8da0cb", "#fc8d62"]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "nodes"},
+      "interactive": false,
+      "encode": {
+        "enter": {"fill": {"scale": "color", "field": "name"}},
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "leaves"},
+      "encode": {
+        "enter": {
+          "stroke": {"value": "#fff"},
+          "tooltip": {
+            "signal": "{\"Procedure\": datum[\"name\"], \"Counts\": format(datum[\"size\"], \".3s\")}"
+          }
+        },
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fill": {"value": "transparent"}
+        },
+        "hover": {"fill": {"value": "white"}}
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "leaves"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "align": {"value": "center"},
+          "baseline": {"value": "bottom"},
+          "fill": {"value": "#000"},
+          "text": {"field": "names"},
+          "fontSize": {"field": "sizes"}
+        },
+        "update": {
+          "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+          "y": {"signal": "0.5 * (datum.y0 + datum.y1)"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "leaves"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "type": "filter",
+          "expr": "size > 18000",
+          "align": {"value": "center"},
+          "baseline": {"value": "top"},
+          "fill": {"value": "#000"},
+          "text": {"field": "sizess"},
+          "fontSize": {"field": "sizes"}
+        },
+        "update": {
+          "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+          "y": {"signal": "0.5 * (datum.y0 + datum.y1)", "offset": 6}
+        }
+      }
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Body Sections",
+      "encode": {"labels": {"update": {"text": {"field": "value"}}}}
+    }
+  ],
+  "config": {}
+}
+
