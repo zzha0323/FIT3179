@@ -20,6 +20,72 @@
       "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/tree.json",
       "transform": [
         {
+          "type": "formula",
+          "as": "sizes",
+          "expr": "sqrt(datum.size/800)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Qatar', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Netherlands', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Poland', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Brazil', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Spain', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Israel', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Canada', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Australia', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Italy', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Ukraine', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Japan', '' ,datum.names)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='South Korea', '' ,datum.names)"
+        },
+
+        {
           "type": "stratify",
           "key": "id",
           "parentKey": "parent"
@@ -176,10 +242,13 @@
             "value": "#000"
           },
           "text": {
-            "field": "name"
+            "field": "names"
           },
           "fontSize": {
-            "field": "size"
+            "field": "sizes"
+          },
+          "fontWeight": {
+            "value": "bold"
           }
         },
         "update": {
@@ -188,43 +257,6 @@
           },
           "y": {
             "signal": "0.5 * (datum.y0 + datum.y1)"
-          }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "from": {
-        "data": "leaves"
-      },
-      "interactive": false,
-      "encode": {
-        "enter": {
-          "type": "text",
-          "expr": "datum.size > 18000",
-          "align": {
-            "value": "center"
-          },
-          "baseline": {
-            "value": "top"
-          },
-          "fill": {
-            "value": "#000"
-          },
-          "text": {
-            "field": "size"
-          },
-          "fontSize": {
-            "field": "size"
-          }
-        },
-        "update": {
-          "x": {
-            "signal": "0.5 * (datum.x0 + datum.x1)"
-          },
-          "y": {
-            "signal": "0.5 * (datum.y0 + datum.y1)",
-            "offset": 6
           }
         }
       }
