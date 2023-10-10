@@ -126,7 +126,7 @@
     "legends": [
       {
         "fill": "color",
-        "title": "Continents",
+        "title": "Regions",
         "encode": {"labels": {"update": {"text": {"field": "value"}}}}
       }
     ],
