@@ -121,31 +121,37 @@
     },
     {
         "id": 21,
-        "name": "Africa",
+        "name": "Other",
+        "size": "309.7",
         "parent": 26
     },
     {
         "id": 22,
         "name": "Americas",
-        "parent": 26
+        "parent": 27
     },
     {
         "id": 23,
         "name": "Asia & Oceania",
-        "parent": 26
+        "parent": 27
     },
     {
         "id": 24,
         "name": "Europe",
-        "parent": 26
+        "parent": 27
     },
     {
         "id": 25,
         "name": "Middle East",
-        "parent": 26
+        "parent": 27
     },
     {
         "id": 26,
+        "name": "Other",
+        "parent": 27
+    },
+    {
+        "id": 27,
         "name": "Regions"
     }
 ]
