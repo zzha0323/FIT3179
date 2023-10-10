@@ -27,7 +27,7 @@
         "id": 5,
         "name": "Saudi Arabia",
         "size": "75.0",
-        "parent": 25
+        "parent": 26
     },
     {
         "id": 6,
@@ -87,7 +87,7 @@
         "id": 15,
         "name": "Israel",
         "size": "23.4",
-        "parent": 25
+        "parent": 26
     },
     {
         "id": 16,
@@ -117,13 +117,13 @@
         "id": 20,
         "name": "Qatar",
         "size": "15.4",
-        "parent": 25
+        "parent": 26
     },
     {
         "id": 21,
         "name": "Other",
         "size": "309.7",
-        "parent": 26
+        "parent": 25
     },
     {
         "id": 22,
@@ -141,12 +141,12 @@
         "parent": 27
     },
     {
-        "id": 26,
+        "id": 25,
         "name": "Other",
         "parent": 27
     },
     {
-        "id": 25,
+        "id": 26,
         "name": "Middle East",
         "parent": 27
     },
