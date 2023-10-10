@@ -24,7 +24,6 @@
           "as": "sizes",
           "expr": "sqrt(datum.size/800)"
         },
-
         {
           "type": "formula",
           "as": "names",
@@ -85,7 +84,6 @@
           "as": "names",
           "expr": "if(datum.name=='South Korea', '' ,datum.names)"
         },
-
         {
           "type": "stratify",
           "key": "id",
