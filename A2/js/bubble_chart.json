@@ -31,7 +31,6 @@
           "as": "sizes",
           "expr": "sqrt(sqrt(datum.Counts/12))"
         },
-        
         {
           "type": "formula",
           "as": "test",
