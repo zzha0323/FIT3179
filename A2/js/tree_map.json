@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "width": 500,
-  "height": 400,
+  "height": 325,
   "signals": [
     {
       "name": "layout",
@@ -136,7 +136,7 @@
             "value": "#fff"
           },
           "tooltip": {
-            "signal": "{\"Country\": datum[\"name\"], \"Counts\": format(datum[\"size\"], \".3s\")}"
+            "signal": "{\"Country\": datum[\"name\"], \"Costs (US$ bn)\": format(datum[\"size\"], \".3s\")}"
           }
         },
         "update": {
