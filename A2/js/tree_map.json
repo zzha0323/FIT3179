@@ -27,62 +27,7 @@
         {
           "type": "formula",
           "as": "names",
-          "expr": "if(datum.name=='Qatar', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Netherlands', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Poland', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Brazil', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Spain', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Israel', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Canada', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Australia', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Italy', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Ukraine', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='Japan', '' ,datum.names)"
-        },
-        {
-          "type": "formula",
-          "as": "names",
-          "expr": "if(datum.name=='South Korea', '' ,datum.names)"
+          "expr": "if(datum.name=='Qatar' || datum.name=='Netherlands' || datum.name=='Poland' || datum.name=='Brazil' || datum.name=='Spain' || datum.name=='Israel' || datum.name=='Canada' || datum.name=='Australia' || datum.name=='Italy' || datum.name=='Ukraine' || datum.name=='Japan' || datum.name=='South Korea', '' ,datum.names)"
         },
         {
           "type": "stratify",
