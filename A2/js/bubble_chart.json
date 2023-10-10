@@ -42,8 +42,13 @@
           },
           {
             "type": "formula",
+            "as": "test",
+            "expr": "if(datum.Region=='North Africa', ['North Africa'],datum.test)"
+          },
+          {
+            "type": "formula",
             "as": "sizes",
-            "expr": "sqrt(sqrt(datum.Counts/25))"
+            "expr": "sqrt(sqrt(datum.Counts/12))"
           }
         ]
       }
