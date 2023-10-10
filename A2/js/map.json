@@ -74,7 +74,7 @@
     },
     {
       "data": {
-        "url": "data/Military_expenditure_cleaned.csv"
+        "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/Military_expenditure_cleaned.csv"
       },
       "transform": [
         {
