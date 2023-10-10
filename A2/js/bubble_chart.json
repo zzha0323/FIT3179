@@ -25,9 +25,6 @@
     {
       "name": "table",
       "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
-      "format": {
-        "type": "json"
-      },
       "transform": [
         {
           "type": "formula",
