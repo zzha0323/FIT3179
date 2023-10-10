@@ -1,135 +1,227 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "title": "Military Expenditure by Regions (2022)",
-    "width": 380,
-    "height": 330,
-    "signals": [
-      {"name": "cx", "update": "width / 2"},
-      {"name": "cy", "update": "height / 2"},
-      {"name": "gravityX", "value": 0.3},
-      {"name": "gravityY", "value": 0.7}
-    ],
-    "data": [
-      {
-        "name": "table",
-        "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
-        "format": {"type": "json"},
-        "transform": [
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='North America', ['North America'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='East Asia', ['East Asia'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='Eastern Europe', ['Eastern Europe'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='Western Europe', ['Western Europe'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='Middle East', ['Middle East'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "test",
-            "expr": "if(datum.Region=='North Africa', ['North Africa'],datum.test)"
-          },
-          {
-            "type": "formula",
-            "as": "sizes",
-            "expr": "sqrt(sqrt(datum.Counts/12))"
-          }
-        ]
-      }
-    ],
-  
-    "scales": [
-      {
-        "name": "size",
-        "domain": {"data": "table", "field": "Counts"},
-        "range": [1, 2000000]
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": "Military Expenditure by Regions (2022)",
+  "width": 380,
+  "height": 330,
+  "signals": [
+    {
+      "name": "cx",
+      "update": "width / 2"
+    },
+    {
+      "name": "cy",
+      "update": "height / 2"
+    },
+    {
+      "name": "gravityX",
+      "value": 0.3
+    },
+    {
+      "name": "gravityY",
+      "value": 0.7
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/bubble.json",
+      "format": {
+        "type": "json"
       },
-      {
-        "name": "color",
-        "type": "ordinal",
-        "domain": {"data": "table", "field": "Continents"},
-        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#377eb8", "#a6cee3"]
-      }
-    ],
-  
-    "marks": [
-      {
-        "name": "nodes",
-        "type": "symbol",
-        "from": {"data": "table"},
-        "encode": {
-          "enter": {
-            "fill": {"scale": "color", "field": "Continents"},
-            "xfocus": {"signal": "cx"},
-            "yfocus": {"signal": "cy"}
+      "transform": [
+        {
+          "type": "formula",
+          "as": "test",
+          "expr": "if(datum.Region=='North America', ['North America'],datum.test)"
+        },
+        {
+          "type": "formula",
+          "as": "test",
+          "expr": "if(datum.Region=='East Asia', ['East Asia'],datum.test)"
+        },
+        {
+          "type": "formula",
+          "as": "test",
+          "expr": "if(datum.Region=='Eastern Europe', ['Eastern Europe'],datum.test)"
+        },
+        {
+          "type": "formula",
+          "as": "test",
+          "expr": "if(datum.Region=='Western Europe', ['Western Europe'],datum.test)"
+        },
+        {
+          "type": "formula",
+          "as": "test",
+          "expr": "if(datum.Region=='Middle East', ['Middle East'],datum.test)"
+        },
+        {
+          "type": "formula",
+          "as": "test",
+          "expr": "if(datum.Region=='North Africa', ['North Africa'],datum.test)"
+        },
+        {
+          "type": "formula",
+          "as": "sizes",
+          "expr": "sqrt(sqrt(datum.Counts/12))"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "size",
+      "domain": {
+        "data": "table",
+        "field": "Counts"
+      },
+      "range": [
+        1,
+        2000000
+      ]
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "data": "table",
+        "field": "Continents"
+      },
+      "range": [
+        "#e41a1c",
+        "#984ea3",
+        "#ff7f00",
+        "#377eb8",
+        "#a6cee3"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "nodes",
+      "type": "symbol",
+      "from": {
+        "data": "table"
+      },
+      "encode": {
+        "enter": {
+          "fill": {
+            "scale": "color",
+            "field": "Continents"
           },
-          "update": {
-            "size": {"signal": "pow(sqrt(sqrt(datum.Counts))*3, 2)", "scale": "size"},
-            "stroke": {"value": "white"},
-            "strokeWidth": {"value": 1},
-            "tooltip": {
-              "signal": "{\"Rank\": datum[\"rank\"], \"Region\": datum[\"Region\"], \"Costs (USD)\": format(datum[\"Counts\"]*1000000, \".2s\")}"
-            }
+          "xfocus": {
+            "signal": "cx"
+          },
+          "yfocus": {
+            "signal": "cy"
           }
         },
-        "transform": [
-          {
-            "type": "force",
-            "iterations": 50,
-            "static": false,
-            "forces": [
-              {
-                "force": "collide",
-                "iterations": 2,
-                "radius": {"expr": "sqrt(datum.size) / 2"}
-              },
-              {"force": "center", "x": {"signal": "cx"}, "y": {"signal": "cy"}},
-              {"force": "x", "x": "xfocus", "strength": {"signal": "gravityX"}},
-              {"force": "y", "y": "yfocus", "strength": {"signal": "gravityY"}}
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "from": {"data": "nodes"},
-        "encode": {
-          "enter": {
-            "align": {"value": "center"},
-            "baseline": {"value": "middle"},
-            "fontSize": {"field": "datum.sizes"},
-            "fontWeight": {"value": "bold"},
-            "fill": {"value": "black"},
-            "text": {"field": "datum.test"}
+        "update": {
+          "size": {
+            "signal": "pow(sqrt(sqrt(datum.Counts))*3, 2)",
+            "scale": "size"
           },
-          "update": {"x": {"field": "x"}, "y": {"field": "y"}}
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 1
+          },
+          "tooltip": {
+            "signal": "{\"Rank\": datum[\"rank\"], \"Region\": datum[\"Region\"], \"Costs (USD)\": format(datum[\"Counts\"]*1000000, \".2s\")}"
+          }
+        }
+      },
+      "transform": [
+        {
+          "type": "force",
+          "iterations": 50,
+          "static": false,
+          "forces": [
+            {
+              "force": "collide",
+              "iterations": 2,
+              "radius": {
+                "expr": "sqrt(datum.size) / 2"
+              }
+            },
+            {
+              "force": "center",
+              "x": {
+                "signal": "cx"
+              },
+              "y": {
+                "signal": "cy"
+              }
+            },
+            {
+              "force": "x",
+              "x": "xfocus",
+              "strength": {
+                "signal": "gravityX"
+              }
+            },
+            {
+              "force": "y",
+              "y": "yfocus",
+              "strength": {
+                "signal": "gravityY"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "enter": {
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontSize": {
+            "field": "datum.sizes"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "black"
+          },
+          "text": {
+            "field": "datum.test"
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "y": {
+            "field": "y"
+          }
         }
       }
-    ],
-  
-    "legends": [
-      {
-        "fill": "color",
-        "title": "Regions",
-        "encode": {"labels": {"update": {"text": {"field": "value"}}}}
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Region",
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "field": "value"
+            }
+          }
+        }
       }
-    ],
-    "config": {}
-  }
-  
+    }
+  ],
+  "config": {}
+}

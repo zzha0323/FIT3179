@@ -57,7 +57,7 @@
       "aggregate": "sum",
       "field": "Count",
       "axis": {"tickCount": 3},
-      "title": "Military Expenditure (US$ b.)"
+      "title": "Military Expenditure (US$ bn)"
     },
     "color": {
       "field": "Region",
@@ -86,7 +86,7 @@
       {
         "field": "Costs",
         "type": "quantitative",
-        "title": "Military Expenditure (US$ b.)",
+        "title": "Military Expenditure (US$ bn)",
         "format": ".2s"
       }
     ]
