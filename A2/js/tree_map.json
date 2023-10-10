@@ -176,10 +176,10 @@
             "value": "#000"
           },
           "text": {
-            "field": "names"
+            "field": "name"
           },
           "fontSize": {
-            "field": "sizes"
+            "field": "size"
           }
         },
         "update": {
@@ -200,8 +200,8 @@
       "interactive": false,
       "encode": {
         "enter": {
-          "type": "filter",
-          "expr": "size > 18000",
+          "type": "text",
+          "expr": "datum.size > 18000",
           "align": {
             "value": "center"
           },
@@ -212,10 +212,10 @@
             "value": "#000"
           },
           "text": {
-            "field": "sizess"
+            "field": "size"
           },
           "fontSize": {
-            "field": "sizes"
+            "field": "size"
           }
         },
         "update": {
