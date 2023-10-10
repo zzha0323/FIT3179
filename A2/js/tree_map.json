@@ -12,7 +12,7 @@
     }
   ],
   "title": {
-    "text": "Top Cosmetic Regions in the US (2020)"
+    "text": "Military Expenditure by Countries (2022)"
   },
   "data": [
     {
@@ -24,6 +24,7 @@
           "as": "sizes",
           "expr": "sqrt(datum.size/1000)"
         },
+        
         {
           "type": "stratify",
           "key": "id",
