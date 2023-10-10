@@ -24,6 +24,7 @@
           "as": "sizes",
           "expr": "sqrt(datum.size/800)"
         },
+
         {
           "type": "formula",
           "as": "names",
