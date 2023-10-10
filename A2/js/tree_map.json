@@ -22,12 +22,17 @@
         {
           "type": "formula",
           "as": "sizes",
-          "expr": "sqrt(datum.size/800)"
+          "expr": "sqrt(sqrt(datum.size*500))"
         },
         {
           "type": "formula",
           "as": "names",
-          "expr": "if(datum.name=='Qatar' || datum.name=='Netherlands' || datum.name=='Poland' || datum.name=='Brazil' || datum.name=='Spain' || datum.name=='Israel' || datum.name=='Canada' || datum.name=='Australia' || datum.name=='Italy' || datum.name=='Ukraine' || datum.name=='Japan' || datum.name=='South Korea', '' ,datum.names)"
+          "expr": "if(datum.name=='Qatar', '' ,datum.name)"
+        },
+        {
+          "type": "formula",
+          "as": "names",
+          "expr": "if(datum.name=='Netherlands' || datum.name=='Poland' || datum.name=='Brazil' || datum.name=='Spain' || datum.name=='Israel' || datum.name=='Canada' || datum.name=='Australia' || datum.name=='Italy' || datum.name=='Ukraine' || datum.name=='Japan' || datum.name=='South Korea', '' ,datum.names)"
         },
         {
           "type": "stratify",
@@ -200,7 +205,8 @@
             "signal": "0.5 * (datum.x0 + datum.x1)"
           },
           "y": {
-            "signal": "0.5 * (datum.y0 + datum.y1)"
+            "signal": "0.5 * (datum.y0 + datum.y1)",
+            "offset": 10
           }
         }
       }
