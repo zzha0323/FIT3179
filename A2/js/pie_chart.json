@@ -14,8 +14,7 @@
   ],
   "mark": {
     "type": "arc",
-    "outerRadius": 100,
-    "xOffset": 30
+    "outerRadius": 100
   },
   "encoding": {
     "theta": {
@@ -26,11 +25,6 @@
     "color": {
       "field": "Country",
       "type": "nominal",
-      "legend": {
-        "orient": "none",
-        "legendX": 48,
-        "legendY": 10
-      },
       "scale": {
         "domain": [
           "United States",

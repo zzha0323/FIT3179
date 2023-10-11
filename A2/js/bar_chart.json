@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Top 8 Countries in Military Expenditure",
-  "width": 600,
-  "height": 300,
+  "width": 700,
+  "height": 400,
   "params": [
     {
       "name": "Year_selection",
