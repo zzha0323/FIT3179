@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Top Cosmetic Procedures (Male)",
+  "title": "Top 8 Country in Military Expenditure",
   "width": 600,
   "height": 300,
   "params": [
@@ -29,7 +29,8 @@
     }
   ],
   "mark": {
-    "type": "bar"
+    "type": "bar",
+    "fill": "#235789"
   },
   "encoding": {
     "y": {
@@ -49,7 +50,7 @@
     "x": {
       "field": "Country",
       "type": "ordinal",
-      "title": "Procedures",
+      "title": "Country",
       "axis": {
         "labelAngle": 0
       },
