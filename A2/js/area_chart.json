@@ -70,8 +70,7 @@
           "Middle East"
         ],
         "range": ["#e41a1c", "#984ea3", "#ff7f00", "#377eb8", "#a6cee3"]
-      },
-        "legend": {"columns": 3}
+      }
       
     },
     "tooltip": [
