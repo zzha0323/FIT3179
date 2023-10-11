@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": "Military Expenditure by Countries (2022)",
   "width": 500,
   "height": 325,
   "signals": [
@@ -11,9 +12,6 @@
       "name": "aspectRatio"
     }
   ],
-  "title": {
-    "text": "Military Expenditure by Countries (2022)"
-  },
   "data": [
     {
       "name": "tree",
