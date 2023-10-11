@@ -38,8 +38,8 @@
       "field": "count",
       "type": "quantitative",
       "title": "Military Expenditure (US$ bn)",
-      "format": ".5s",
       "axis": {
+        "format": ".5s",
         "tickCount": 5
       },
       "scale": {
