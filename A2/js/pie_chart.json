@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Cosmetic Surgery Patients in the US (2020)",
+  "title": "Military Expenditure of Top 8 Countries (2022)",
   "width": 380,
   "height": 218,
   "data": {
