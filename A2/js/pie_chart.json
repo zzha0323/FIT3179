@@ -12,7 +12,11 @@
       "as": "count"
     }
   ],
-  "mark": "arc",
+  "mark": {
+    "type": "arc",
+    "outerRadius": 100,
+    "xOffset": 30
+  },
   "encoding": {
     "theta": {
       "field": "count",
@@ -22,6 +26,11 @@
     "color": {
       "field": "Country",
       "type": "nominal",
+      "legend": {
+        "orient": "none",
+        "legendX": 48,
+        "legendY": 10
+      },
       "scale": {
         "domain": [
           "United States",
