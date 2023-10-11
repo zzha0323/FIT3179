@@ -30,7 +30,8 @@
   ],
   "mark": {
     "type": "bar",
-    "fill": "#235789"
+    "fill": "#235789",
+    "tooltip": true
   },
   "encoding": {
     "y": {
@@ -41,7 +42,10 @@
         "tickCount": 5
       },
       "scale": {
-        "domain": [0, 1000]
+        "domain": [
+          0,
+          1000
+        ]
       }
     },
     "x": {
@@ -51,14 +55,6 @@
       "axis": {
         "labelAngle": 0
       }
-    },
-    "color": {
-      "field": "Country",
-      "type": "nominal",
-      "scale": {
-        "range": ["#F1D302"]
-      },
-      "legend": null
     }
   },
   "config": {}
