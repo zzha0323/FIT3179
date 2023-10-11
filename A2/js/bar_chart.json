@@ -53,8 +53,7 @@
       "title": "Country",
       "axis": {
         "labelAngle": 0
-      },
-      "sort": "array"
+      }
     },
     "color": {
       "field": "Country",
