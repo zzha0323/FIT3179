@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"title": "Military Expenditure in Regional Totals (1992 - 2022)",
+  "title": "Military Expenditure in Regional Totals (1992 - 2022)",
   "width": 380,
   "height": 218,
   "data": {
@@ -33,10 +33,21 @@
   ],
   "transform": [
     {
-      "joinaggregate": [{"op": "sum", "field": "Costs", "as": "sumCounts"}],
-      "groupby": ["Year"]
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "Costs",
+          "as": "sumCounts"
+        }
+      ],
+      "groupby": [
+        "Year"
+      ]
     },
-    {"calculate": "datum.Costs", "as": "Count"},
+    {
+      "calculate": "datum.Costs",
+      "as": "Count"
+    },
     {
       "filter": "Region_Selection == null || datum.Region == Region_Selection"
     },
@@ -49,14 +60,18 @@
     "x": {
       "timeUnit": "year",
       "field": "Year",
-      "axis": {"format": "%Y", "tickCount": 6},
+      "axis": {
+        "format": "%Y",
+        "tickCount": 6
+      },
       "title": "Year"
     },
     "y": {
-
       "aggregate": "sum",
       "field": "Count",
-      "axis": {"tickCount": 3},
+      "axis": {
+        "tickCount": 3
+      },
       "title": "Military Expenditure (US$ bn)"
     },
     "color": {
@@ -69,13 +84,20 @@
           "Europe",
           "Middle East"
         ],
-        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#377eb8", "#a6cee3"]
+        "range": [
+          "#e41a1c",
+          "#984ea3",
+          "#ff7f00",
+          "#377eb8",
+          "#a6cee3"
+        ]
       }
-      
     },
     "tooltip": [
-      {"field": "Region", 
-      "type": "nominal"},
+      {
+        "field": "Region",
+        "type": "nominal"
+      },
       {
         "field": "Year",
         "title": "Year",
@@ -90,5 +112,9 @@
       }
     ]
   },
-  "config": {"legend": {"orient": "bottom"}}
+  "config": {
+    "legend": {
+      "orient": "bottom"
+    }
+  }
 }
