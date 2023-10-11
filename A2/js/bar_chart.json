@@ -41,10 +41,7 @@
         "tickCount": 5
       },
       "scale": {
-        "domain": [
-          0,
-          1000
-        ]
+        "domain": [0, 1000]
       }
     },
     "x": {
@@ -59,36 +56,10 @@
       "field": "Country",
       "type": "nominal",
       "scale": {
-        "range": [
-          "#F1D302"
-        ]
+        "range": ["#F1D302"]
       },
       "legend": null
     }
   },
-  "layer": [
-    {
-      "mark": {
-        "type": "bar",
-        "fill": "#235789"
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "baseline": "bottom"
-      },
-      "encoding": {
-        "text": {
-          "field": "count",
-          "type": "quantitative",
-          "format": ".5s"
-        },
-        "color": {
-          "value": "black"
-        }
-      }
-    }
-  ],
   "config": {}
 }
