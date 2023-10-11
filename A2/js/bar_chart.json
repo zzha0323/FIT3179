@@ -55,7 +55,8 @@
       "title": "Country",
       "axis": {
         "labelAngle": 0
-      }
+      },
+      "sort": "-y"
     }
   },
   "config": {}
