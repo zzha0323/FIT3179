@@ -1,16 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Top Cosmetic Procedures (Male)",
-  "width": 400,
-  "height": 250,
+  "width": 600,
   "params": [
     {
       "name": "Year_selection",
-      "value": 2020,
+      "value": 2022,
       "bind": {
         "input": "range",
-        "min": 2010,
-        "max": 2020,
+        "min": 1992,
+        "max": 2022,
         "step": 1,
         "name": "Year: "
       }
@@ -24,10 +23,10 @@
   },
   "transform": [
     {
-      "filter": "datum.year == Year_selection"
+      "filter": "datum.Year == Year_selection"
     },
     {
-      "calculate": "datum.counts/1000",
+      "calculate": "datum.Costs/1000",
       "as": "count"
     }
   ],
@@ -38,28 +37,28 @@
     "y": {
       "field": "count",
       "type": "quantitative",
-      "title": "Counts (in thousands)",
+      "title": "Costs (in thousands)",
       "axis": {
-        "tickCount": 4
+        "tickCount": 5
       },
       "scale": {
         "domain": [
           0,
-          70
+          1000
         ]
       }
     },
     "x": {
-      "field": "surgery",
+      "field": "Country",
       "type": "ordinal",
       "title": "Procedures",
       "axis": {
         "labelAngle": 0
       },
-      "sort": "ascending"
+      "sort": "array"
     },
     "color": {
-      "field": "Surgery",
+      "field": "Country",
       "type": "nominal",
       "scale": {
         "range": [
@@ -83,9 +82,9 @@
       },
       "encoding": {
         "text": {
-          "field": "counts",
+          "field": "count",
           "type": "quantitative",
-          "format": ".3s"
+          "format": ".5s"
         },
         "color": {
           "value": "black"
@@ -93,9 +92,5 @@
       }
     }
   ],
-  "config": {
-    "scale": {
-      "bandPaddingInner": 0.2
-    }
-  }
+  "config": {}
 }
