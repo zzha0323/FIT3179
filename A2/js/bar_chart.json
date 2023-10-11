@@ -2,6 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Top Cosmetic Procedures (Male)",
   "width": 600,
+  "height": 300,
   "params": [
     {
       "name": "Year_selection",
@@ -16,10 +17,7 @@
     }
   ],
   "data": {
-    "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/Top_8_countries-1992-2022.csv",
-    "format": {
-      "type": "csv"
-    }
+    "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/Top_8_countries-1992-2022.csv"
   },
   "transform": [
     {
