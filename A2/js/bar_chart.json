@@ -39,7 +39,7 @@
       "type": "quantitative",
       "title": "Military Expenditure (US$ bn)",
       "axis": {
-        "format": ".5s",
+        "format": ".5",
         "tickCount": 5
       },
       "scale": {
