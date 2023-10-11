@@ -7,55 +7,35 @@
     "url": "https://raw.githubusercontent.com/zzha0323/FIT3179/main/A2/data/pie.csv"
   },
   "transform": [
-    {"calculate": "(datum.Total/13410000)", "as": "percentage_total"},
-    {"calculate": "(sqrt(datum.Total/50050))", "as": "sizess"}
+    {
+      "calculate": "datum.Total / 1000",
+      "as": "Total_billion"
+    }
   ],
-  "mark": {"type": "arc"},
+  "mark": "arc",
   "encoding": {
     "theta": {
-      "field": "percentage_total",
+      "field": "Total_billion",
       "type": "quantitative",
-      "stack": "normalize"
+      "title": "Military Expenditure (US$ bn)"
     },
     "color": {
-      "field": "Gender",
+      "field": "Country",
       "type": "nominal",
-      "legend": {"orient": "none", "legendX":47, "legendY": 5},
-      "scale": {"domain": ["Female", "Male"], "range": ["#F1D302", "#235789"]}
-    }
-  },
-  "layer": [
-    {"mark": {"type": "arc", "outerRadius": 80, "xOffset": 11, "yOffset": 9}},
-    {
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "radius": 39,
-        "fontSize": 14,
-        "fontWeight": "bold"
+      "scale": {"domain": ["United States", "China", "Other"], "range": ["#d95f0e", "#fe9929", "#fed98e"]}
+    },
+    "tooltip": [
+      {
+        "field": "Country",
+        "type": "nominal",
+        "title": "Country"
       },
-      "encoding": {
-        "theta": {"field": "percentage_total", "type": "quantitative"},
-        "color": {
-          "condition": {
-            "test": "datum['percentage_total'] > 0.5",
-            "value": "black"
-          },
-          "value": "white"
-        },
-        "text": {
-          "field": "percentage_total",
-          "type": "quantitative",
-          "format": ".0%"
-        }
+      {
+        "field": "Total_billion",
+        "type": "quantitative",
+        "title": "Expenditure (US$ bn)",
+        "format": ".1f"
       }
-    }
-  ],
-"config": {
-  "style": {
-    "cell": {
-      "stroke": "transparent"
-    }
+    ]
   }
-}
 }

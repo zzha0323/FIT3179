@@ -30,8 +30,7 @@
   ],
   "mark": {
     "type": "bar",
-    "fill": "#235789",
-    "tooltip": true
+    "fill": "#fe9929"
   },
   "encoding": {
     "y": {
@@ -39,7 +38,6 @@
       "type": "quantitative",
       "title": "Military Expenditure (US$ bn)",
       "axis": {
-        "format": ".5",
         "tickCount": 5
       },
       "scale": {
@@ -57,7 +55,20 @@
         "labelAngle": 0
       },
       "sort": "-y"
-    }
+    },
+    "tooltip": [
+      {
+        "field": "Country",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Costs (US$ bn)",
+        "format": ".5s"
+      }
+    ]
   },
   "config": {}
 }
