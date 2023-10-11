@@ -1,0 +1,101 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top Cosmetic Procedures (Male)",
+  "width": 400,
+  "height": 250,
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2010,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/cherlinedelfina/FIT3179_ASS2/main/dataset/ASS2_male_2%20-%20Sheet1.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.year == Year_selection"
+    },
+    {
+      "calculate": "datum.counts/1000",
+      "as": "count"
+    }
+  ],
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Counts (in thousands)",
+      "axis": {
+        "tickCount": 4
+      },
+      "scale": {
+        "domain": [
+          0,
+          70
+        ]
+      }
+    },
+    "x": {
+      "field": "surgery",
+      "type": "ordinal",
+      "title": "Procedures",
+      "axis": {
+        "labelAngle": 0
+      },
+      "sort": "ascending"
+    },
+    "color": {
+      "field": "Surgery",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#F1D302"
+        ]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "fill": "#235789"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "bottom"
+      },
+      "encoding": {
+        "text": {
+          "field": "counts",
+          "type": "quantitative",
+          "format": ".3s"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    }
+  ],
+  "config": {
+    "scale": {
+      "bandPaddingInner": 0.2
+    }
+  }
+}
