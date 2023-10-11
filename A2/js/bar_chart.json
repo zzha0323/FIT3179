@@ -30,7 +30,7 @@
   ],
   "mark": {
     "type": "bar",
-    "fill": "#fe9929"
+    "fill": "#ff7f00"
   },
   "encoding": {
     "y": {

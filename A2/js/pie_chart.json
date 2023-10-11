@@ -9,20 +9,31 @@
   "transform": [
     {
       "calculate": "datum.Total / 1000",
-      "as": "Total_billion"
+      "as": "count"
     }
   ],
   "mark": "arc",
   "encoding": {
     "theta": {
-      "field": "Total_billion",
+      "field": "count",
       "type": "quantitative",
       "title": "Military Expenditure (US$ bn)"
     },
     "color": {
       "field": "Country",
       "type": "nominal",
-      "scale": {"domain": ["United States", "China", "Other"], "range": ["#d95f0e", "#fe9929", "#fed98e"]}
+      "scale": {
+        "domain": [
+          "United States",
+          "China",
+          "Other"
+        ],
+        "range": [
+          "#d95f0e",
+          "#fe9929",
+          "#fed98e"
+        ]
+      }
     },
     "tooltip": [
       {
@@ -31,10 +42,10 @@
         "title": "Country"
       },
       {
-        "field": "Total_billion",
+        "field": "count",
         "type": "quantitative",
         "title": "Expenditure (US$ bn)",
-        "format": ".1f"
+        "format": ".5s"
       }
     ]
   }
