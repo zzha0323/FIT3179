@@ -20,7 +20,7 @@
     {
       "mark": {
         "type": "arc",
-        "outerRadius": 110
+        "outerRadius": 100
       },
       "encoding": {
         "theta": {
@@ -63,7 +63,7 @@
     {
       "mark": {
         "type": "text",
-        "radius": 65,
+        "radius": 60,
         "align": "center",
         "baseline": "middle",
         "fontSize": 20,
