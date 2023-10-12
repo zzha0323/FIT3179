@@ -10,46 +10,97 @@
     {
       "calculate": "datum.Total / 1000",
       "as": "count"
+    },
+    {
+      "calculate": "(datum.Total/1589512.3)",
+      "as": "percentage_total"
     }
   ],
-  "mark": {
-    "type": "arc",
-    "outerRadius": 100
-  },
-  "encoding": {
-    "theta": {
-      "field": "count",
-      "type": "quantitative",
-      "title": "Military Expenditure (US$ bn)"
-    },
-    "color": {
-      "field": "Country",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "United States",
-          "China",
-          "Other"
-        ],
-        "range": [
-          "#d95f0e",
-          "#fe9929",
-          "#fed98e"
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "outerRadius": 110
+      },
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Military Expenditure (US$ bn)",
+          "stack": true
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "United States",
+              "China",
+              "Other"
+            ],
+            "range": [
+              "#d95f0e",
+              "#fe9929",
+              "#fed98e"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Expenditure (US$ bn)",
+            "format": ".2f"
+          }
         ]
       }
     },
-    "tooltip": [
       {
-        "field": "Country",
-        "type": "nominal",
-        "title": "Country"
+    {
+      "mark": {
+        "type": "text",
+        "radius": 65,
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "color": "white"
       },
-      {
-        "field": "count",
-        "type": "quantitative",
-        "title": "Expenditure (US$ bn)",
-        "format": ".5s"
+      "encoding": {
+        "text": {
+          "field": "percentage_total",
+          "type": "quantitative",
+          "format": ".1%"
+        },
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "stack": true
+        },
+        "tooltip": [
+          {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Expenditure (US$ bn)",
+            "format": ".2f"
+          }
+        ]
       }
-    ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }
