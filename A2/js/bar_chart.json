@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Top 8 Countries' Military Expenditure Over 30 Years (2022)",
-  "width": 700,
-  "height": 400,
+  "width": 800,
+  "height": 300,
   "params": [
     {
       "name": "Year_selection",
