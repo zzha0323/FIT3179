@@ -55,11 +55,6 @@
           "type": "formula",
           "as": "test",
           "expr": "if(datum.Region=='Middle East', ['Middle East'],datum.test)"
-        },
-        {
-          "type": "formula",
-          "as": "test",
-          "expr": "if(datum.Region=='North Africa', ['North Africa'],datum.test)"
         }
       ]
     }
