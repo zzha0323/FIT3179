@@ -28,10 +28,26 @@
       "as": "count"
     }
   ],
-  "mark": {
-    "type": "bar",
-    "fill": "#ff7f00"
-  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {"value": "#ff7f00"}}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "bottom"
+      },
+      "encoding": {
+        "text": {
+          "field": "count",
+          "type": "quantitative",
+          "format": ".5s"
+        }
+      }
+    }
+  ],
   "encoding": {
     "y": {
       "field": "count",
@@ -43,7 +59,7 @@
       "scale": {
         "domain": [
           0,
-          900
+          1000
         ]
       }
     },
@@ -54,7 +70,7 @@
       "axis": {
         "labelAngle": 0
       },
-      "sort": "-y"
+      "sort": ["count"]
     },
     "tooltip": [
       {
