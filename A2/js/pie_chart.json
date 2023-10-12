@@ -60,7 +60,6 @@
         ]
       }
     },
-      {
     {
       "mark": {
         "type": "text",
@@ -98,9 +97,5 @@
       }
     }
   ],
-  "config": {
-    "view": {
-      "stroke": "transparent"
-    }
-  }
+  "config": {}
 }
