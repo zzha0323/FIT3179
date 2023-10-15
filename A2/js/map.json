@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Military Expenditure in Current USD (1960 - 2022)",
+  "title": "Global Military Expenditure in Current USD (1992 - 2022)",
   "width": 700,
   "height": 400,
   "projection": {
@@ -19,7 +19,7 @@
       "value": 2022,
       "bind": {
         "input": "range",
-        "min": 1960,
+        "min": 1992,
         "max": 2022,
         "step": 1,
         "name": "Year: "
